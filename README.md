@@ -1,13 +1,16 @@
 # Agentic AI & Gen AI Learning Projects
 
-This repository contains a collection of projects designed to learn and demonstrate Generative AI and Agentic AI concepts.
+This repository contains a list of my projects where I have developed AI agents for my personal use cases. These projects are not just developed locally but also live and deployed. 
+
+You can clone this repo, copy my code, replace the data, and use it for your own purposes. If you are interested in how to deploy and make it live, feel free to reach out to me via LinkedIn or Email.
 
 ## Projects
 
 ### 1. Resume Agent
 A personal AI assistant that parses my resume and answers professional queries about me.
-- **Tech Stack**: Next.js, Python (FastAPI/Vercel), OpenAI.
-- **Location**: `./project-1-resume-agent`
+- **Live Demo**: [vybhav-resume-ai.com](https://resume-ai-rosy-kappa.vercel.app)
+- **Tech Stack**: Next.js, Python, OpenAI.
+- **Location**: [./project-1-resume-agent](./project-1-resume-agent)
 
 ### 2. Networking Bot
 *Coming Soon*

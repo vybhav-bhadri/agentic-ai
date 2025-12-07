@@ -65,11 +65,11 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) to chat with your agent.
 
 ## Live Demo
-Check out the live version here: [Project Link Placeholder]
+Check out the live version here: [vybhav-resume-ai.com](https://resume-ai-rosy-kappa.vercel.app)
 
 If you found this interesting, feel free to reach out:
 - **Email**: [jobsforvybhav@gmail.com](mailto:jobsforvybhav@gmail.com)
-- **LinkedIn**: [Vybhav Bhadris](https://linkedin.com/in/vybhavbhadris)
+- **LinkedIn**: [Vybhav Bhadris](https://www.linkedin.com/in/vybhav-bhadri)
 
 ## How to Spot an AI-Generated UI (Vibe Coding)
 Curious if an app was "vibe coded" (built with AI assistance)? Look for these tell-tale signs:
