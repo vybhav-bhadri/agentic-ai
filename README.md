@@ -1,4 +1,4 @@
-# Agentic AI & Gen AI Learning Projects
+# Personal AI Agents
 
 This repository contains a list of my projects where I have developed AI agents for my personal use cases. These projects are not just developed locally but also live and deployed. 
 
