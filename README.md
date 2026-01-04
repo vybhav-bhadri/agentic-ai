@@ -17,7 +17,7 @@ A personal AI assistant that parses my resume and answers professional queries a
 
 ### 2. Networking Bot
 A personal AI assistant that researches prospects and drafts hyper-personalized outreach for LinkedIn, Twitter, and Instagram.
-- **Live Demo**: will be live soon.....
+- **Live Demo**: [vybhav-networking-bot.com](https://networking-bot-ui-production.up.railway.app)
 - **Tech Stack**: Next.js, Python - OpenAI Agent SDK, OpenRouter.
 - **Location**: [./project-2-networking-bot](./project-2-networking-bot)
 
