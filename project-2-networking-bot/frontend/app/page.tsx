@@ -39,9 +39,7 @@ export default function Home() {
             </div>
             NetworkBot
           </div>
-          <Link href="/login" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
-            Sign In
-          </Link>
+
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -53,13 +51,7 @@ export default function Home() {
             animate="visible"
             className="text-left space-y-8"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-indigo-100 text-indigo-700 text-sm font-medium shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-              </span>
-              Now powered by Claude 3.5 Sonnet
-            </motion.div>
+
 
             <motion.h1 variants={itemVariants} className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
               Networking <br />
@@ -75,9 +67,7 @@ export default function Home() {
               <Link href="/generate" className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-indigo-500/25 hover:bg-indigo-700 hover:scale-105 transition-all duration-200 group">
                 Start Generating <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <button className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-xl font-semibold border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all">
-                View Examples
-              </button>
+
             </motion.div>
 
             <motion.div variants={itemVariants} className="flex items-center gap-6 pt-8 text-sm text-slate-500">
