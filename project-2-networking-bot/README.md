@@ -8,7 +8,7 @@ Unlike standard chatbots, this project uses an **autonomous multi-agent architec
 - **Specialist Agents**: Dedicated sub-agents for **LinkedIn**, **Twitter**, and **Instagram** that know the specific tone, length limits, and best practices for each platform.
 - **Research First**: The bot searches the web for the recipient's recent posts or news *before* writing a single word, ensuring high relevance.
 
-## 🚀 Innovation: Why is this different?
+## Innovation: Why is this different?
 This represents an evolution from simple RAG (Project 1) to **Agentic Workflows**.
 - **No Vendor Lock-in**: We use **OpenRouter**, allowing us to swap models instantly.
 - **Flash Models**: Optimized to run on lightweight, high-speed models (e.g., `xiaomi/mimo-v2-flash`), proving you don't need expensive models for great results.
@@ -87,7 +87,7 @@ npm run dev
 
 ---
 
-## 💡 About Vibe Coding
+## About Vibe Coding
 Just like Project 1, this UI was "vibe coded"—built with AI assistance to prioritize aesthetics and fluidity (glassmorphism, micro-interactions) while maintaining robust engineering under the hood.
 
 If you found this interesting, feel free to reach out:
