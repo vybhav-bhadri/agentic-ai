@@ -16,7 +16,10 @@ A personal AI assistant that parses my resume and answers professional queries a
 - **Location**: [./project-1-resume-agent](./project-1-resume-agent)
 
 ### 2. Networking Bot
-*Coming Soon*
+A personal AI assistant that researches prospects and drafts hyper-personalized outreach for LinkedIn, Twitter, and Instagram.
+- **Live Demo**: [vybhav-networking-bot.com](https://networking-bot.vercel.app)
+- **Tech Stack**: Next.js, Python, OpenRouter.
+- **Location**: [./project-2-networking-bot](./project-2-networking-bot)
 
 ### 3. Datepilot
 *Coming Soon*
