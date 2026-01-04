@@ -1,5 +1,7 @@
 import logging
+import json
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
 from models.models import UserInput, OutreachResponse
 from services import outreach_service
 
@@ -47,3 +49,14 @@ async def generate_outreach(user_input: UserInput):
     except Exception as e:
         logger.error(f"Error in generate_outreach endpoint: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Error generating outreach: {str(e)}")
+
+@router.post("/outreach/stream")
+async def stream_outreach(user_input: UserInput):
+    """Streaming endpoint for outreach generation"""
+    logger.info(f"Received streaming outreach request: {user_input}")
+    
+    user_input_dict = user_input.model_dump()
+    return StreamingResponse(
+        outreach_service.stream_outreach(user_input_dict),
+        media_type="text/event-stream"
+    )

@@ -60,7 +60,7 @@ const STAGES = [
   { id: "ask_for_intro", label: "Ask for Intro" },
 ];
 
-const ENDPOINT = "/api/outreach";
+const ENDPOINT = "/api/outreach/stream";
 
 function cn(...inputs: (string | undefined | null | false)[]) {
   return twMerge(clsx(inputs));
@@ -75,6 +75,7 @@ export default function GenerateWizard() {
     input: "",
   });
   const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("Drafting your message...");
   const [data, setData] = useState<OutreachResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -104,20 +105,54 @@ export default function GenerateWizard() {
     setLoading(true);
     setError(null);
     setData(null);
+    setStatusMessage("Our agents are working on it...");
     nextStep(); // Go to loading/result step
 
     try {
-      const res = await fetch(ENDPOINT, {
+      const response = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-      const json = await res.json();
-      setData(json);
+
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+      if (!response.body) throw new Error("No response body");
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+
+        for (const line of lines) {
+          if (line.startsWith("data: ")) {
+            try {
+              const event = JSON.parse(line.slice(6));
+              if (event.error) {
+                throw new Error(event.error);
+              }
+              if (event.message) {
+                setStatusMessage(event.message);
+              }
+              if (event.status === "done" && event.data) {
+                setData(event.data);
+                setLoading(false);
+              }
+            } catch (e) {
+              console.error("Error parsing SSE event:", e);
+            }
+          }
+        }
+      }
     } catch (e: any) {
+      console.error("Streaming error:", e);
       setError(e?.message || "Something went wrong.");
-    } finally {
       setLoading(false);
     }
   };
@@ -257,8 +292,8 @@ export default function GenerateWizard() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-slate-800">Drafting your message...</h3>
-                      <p className="text-slate-500 mt-2">Researching recipient • Analyzing tone • Writing</p>
+                      <h3 className="text-xl font-semibold text-slate-800">{statusMessage}</h3>
+                      <p className="text-slate-500 mt-2">Our agents are working on it...</p>
                     </div>
                   </div>
                 ) : error ? (

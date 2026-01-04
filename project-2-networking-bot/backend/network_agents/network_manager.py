@@ -6,7 +6,9 @@ from llm_config import get_model
 
 NETWORK_INSTRUCTIONS = """
 You are NetworkManager. Your job is to select the correct platform tool (twitter_agent, instagram_agent, linkedin_agent)
-based on the user's input, call that tool, and return exactly the JSON the tool returns. Do NOT invent the message yourself.
+based on the user's input, call that tool, and return the EXACT JSON the tool returns. 
+Do NOT strip any fields like 'platform', 'interaction_stage', or 'tone'. 
+Do NOT invent the message yourself.
 If the chosen tool fails, return a JSON object with {"error": "<brief explanation>"}.
 """
 
